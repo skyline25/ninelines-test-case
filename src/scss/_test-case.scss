@@ -1,0 +1,161 @@
+.section {
+	margin-bottom: 2px;
+	padding-top: 2.5rem;
+	background: url("../images/background.png") center no-repeat;
+	background-size: cover; 
+}
+
+.personal {
+	position: relative;
+	margin-top: 5rem;
+	
+	&__cell-1 {
+		@include xy-cell(2 of 8);
+	}
+	
+	&__cell-2 {
+		@include xy-cell(6 of 8);
+	}
+
+	&__image-container {
+		overflow: hidden;
+		margin-bottom: 2rem;
+		border-radius: 50%;
+	}
+
+	&__image {
+		height: auto;
+		max-width: 100%;
+	}
+
+	&__input {
+		margin-bottom: 2.625rem;
+		border-bottom: 2px solid $color-mine-shaft;
+        height: 2rem;
+        letter-spacing: 0.1rem;
+		text-transform: uppercase;
+
+		&:focus {
+			border-bottom: 2px solid $color-mine-shaft;
+		}
+	}
+
+	&__stamp {
+		position: absolute;
+		right: 2px;
+		bottom: 10px;
+	}
+
+	@media (max-width: $global-width) {
+		margin-top: 0;
+
+		&__cell-1 {
+			@include xy-cell(4 of 8);
+			@include xy-cell-offset(2 of 8);
+		}
+	
+		&__cell-2 {
+			@include xy-cell(8 of 8);
+		}
+	}
+}
+
+.skills {
+	&__title-cell {
+		@include xy-cell(8 of 8);
+	}
+	
+	&__title {
+		margin-bottom: 1.5rem;
+	}
+
+	&__cell {
+		@include xy-cell(2 of 8);
+		position: relative;
+		margin-bottom: 3rem;
+	}
+	
+	&__input {
+		position: absolute;
+		z-index: -1;
+		margin-bottom: 0;
+		opacity: 0;
+	}
+	
+	&__input + &__label {
+        margin: 0 0 0 2.333rem;
+        letter-spacing: 0.1rem;
+		text-transform: uppercase;
+		
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 2px;
+			display: block;
+			border-radius: 5px;
+			width: 20px;
+			height: 20px;
+			background: $color-gallery;
+		}
+	}
+	
+	&__input:checked + &__label {
+		&::before {
+			background: $color-cerulean url("../images/checkbox.png") center no-repeat;
+		}
+	}
+
+	@media (max-width: $global-width) {
+		&__cell {
+			@include xy-cell(4 of 8);
+		}
+	}
+}
+
+.level {
+	margin-bottom: 8rem;
+	padding-top: 5rem;
+	
+	&__cell {
+		@include xy-cell(4 of 8);
+		margin-bottom: 5.334rem;
+	}
+	
+	&__image-wrapper {
+		position: relative;
+		display: inline-block;
+	}
+
+	&__scale-image {
+		height: auto;
+		max-width: 100%;
+	}
+
+	&__scale-arrow-image {
+		position: absolute;
+		right: calc(50% - 10px);
+		bottom: -10px;
+	}
+	
+	&__title {
+		margin-bottom: 1.5rem;
+	}
+
+	&__value {
+		font-weight: 900;
+		font-size: 4.167rem;
+        line-height: 4.167rem;
+        letter-spacing: 0.208rem;
+		color: $color-cerulean;
+	}
+
+	@media (max-width: $global-width) {
+		margin-bottom: 0;
+
+		&__cell {
+			@include xy-cell(8 of 8);
+			text-align: center;
+		}
+	}
+}

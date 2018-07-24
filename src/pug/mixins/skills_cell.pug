@@ -1,0 +1,14 @@
+mixin skills_cell(options)
+    .cell.skills__cell(class=options.additional_class)
+        if options.checked === 'checked'
+            input.skills__input(
+                type="checkbox"
+                id=options.id 
+                checked
+            )
+        else 
+            input.skills__input(
+                type="checkbox"
+                id=options.id 
+            )
+        label.skills__label(for=options.id)=options.value

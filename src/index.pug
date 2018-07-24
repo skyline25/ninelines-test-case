@@ -1,0 +1,147 @@
+extends pug/base
+
+append vars
+	//- ...
+
+block content
+	//- ...
+	.grid-container.section.personal
+		.grid-x
+			.cell.personal__cell-1
+				.personal__image-container
+					img.personal__image(src="images/avatar.jpg" alt="avatar")
+					
+			.cell.personal__cell-2
+				+personal_input({
+					type: 'text',
+					name: 'name',
+					placeholder: 'ИМЯ',
+					value: 'ОЛЕГ'
+				})
+
+				+personal_input({
+					type: 'text',
+					name: 'birthday',
+					placeholder: 'ДАТА РОЖДЕНИЯ',
+					value: '16.10.1984'
+				})
+
+				+personal_input({
+					type: 'text',
+					name: 'city',
+					placeholder: 'ГОРОД',
+					value: 'ДОНЕЦК'
+				})
+
+				+personal_input({
+					type: 'text',
+					name: 'contact',
+					placeholder: 'КОНТАКТНЫЕ ДАННЫЕ',
+					value: 'SKYPE: skyline2555'
+				})
+
+			img.personal__stamp(src="images/stamp.png")
+
+	.grid-container.section.skills
+		.grid-x
+			.cell.skills__title-cell
+				p.lead.skills__title
+					| Навыки
+
+			+skills_cell({
+				additional_class: '',
+				id: 'html5',
+				checked: 'checked',
+				value: 'html5'
+			})
+
+			+skills_cell({
+				additional_class: '',
+				id: 'sass',
+				checked: 'checked',
+				value: 'sass'
+			})
+
+			+skills_cell({
+				additional_class: 'skills__js',
+				id: 'vanillajs',
+				checked: '',
+				value: 'vanillajs'
+			})
+
+			+skills_cell({
+				additional_class: '',
+				id: 'git',
+				checked: 'checked',
+				value: 'git'
+			})
+
+			+skills_cell({
+				additional_class: '',
+				id: 'css3',
+				checked: 'checked',
+				value: 'css3'
+			})
+
+			+skills_cell({
+				additional_class: '',
+				id: 'less',
+				checked: '',
+				value: 'less'
+			})
+
+			+skills_cell({
+				additional_class: 'skills__js',
+				id: 'angular',
+				checked: '',
+				value: 'angular'
+			})
+
+			+skills_cell({
+				additional_class: '',
+				id: 'foundation',
+				checked: 'checked',
+				value: 'foundation'
+			})
+
+			+skills_cell({
+				additional_class: '',
+				id: 'bem',
+				checked: 'checked',
+				value: 'бэм'
+			})
+
+			+skills_cell({
+				additional_class: '',
+				id: 'gulp',
+				checked: 'checked',
+				value: 'gulp'
+			})
+
+			+skills_cell({
+				additional_class: 'skills__js',
+				id: 'jquery',
+				checked: 'checked',
+				value: 'jquery'
+			})
+
+			+skills_cell({
+				additional_class: '',
+				id: 'bootstrap',
+				checked: '',
+				value: 'bootstrap'
+			})
+
+	.grid-container.section.level
+		.grid-x
+			.cell.level__cell.level__cell-1
+				.level__image-wrapper
+					img.level__scale-image(src="images/scale.png" alt="scale")
+					img.level__scale-arrow-image(src="images/scale-arrow.png" alt="scale arrow")
+
+			.cell.level__cell.level__cell-2
+				p.lead.level__title
+					| Мой уровень владения #[br]
+					| Java Script
+				span.level__value
+					| 0
